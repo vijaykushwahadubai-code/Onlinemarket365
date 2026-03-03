@@ -33,7 +33,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 px-2 border-b border-white/5 pb-6 relative z-10">
         <div className="flex items-center gap-4">
           <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-2xl bg-gradient-to-br ${gradient} text-white ring-1 ring-white/20 backdrop-blur-xl`}>
-            <i className={icon}></i>
+            <i className={`${icon} neon-icon`}></i>
           </div>
           <div>
              <h2 className="text-3xl font-heading font-bold text-white tracking-tight drop-shadow-sm">{title}</h2>
@@ -58,7 +58,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                 onMouseMove={handleIconMouseMove}
                 onMouseLeave={handleIconMouseLeave}
               >
-                <i className={item.icon}></i>
+                <i className={`${item.icon} transition-transform duration-500 group-hover:scale-125 group-hover:-rotate-12 neon-icon`}></i>
               </div>
               <div className="flex flex-col gap-2 items-end">
                  <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 group-hover:bg-white group-hover:text-black transition-all">
@@ -100,7 +100,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                   <div>
                     <h1 className="text-5xl md:text-7xl xl:text-8xl font-heading font-black tracking-tight leading-tight text-white mb-2 drop-shadow-lg flex items-center flex-wrap">
                         Market<span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">365</span>
-                        <span className="text-indigo-400 text-4xl md:text-5xl ml-3 opacity-90"><i className="fa-solid fa-infinity"></i></span>
+                        <span className="text-indigo-400 text-4xl md:text-5xl ml-3 opacity-90"><i className="fa-solid fa-infinity neon-icon"></i></span>
                     </h1>
                     <p className="text-2xl md:text-3xl text-slate-300 font-light">
                         The Operating System for <span className="font-bold text-white">Modern Business</span>.
@@ -116,14 +116,14 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                         onClick={() => onNavigate(ToolId.CHAT)}
                         className="px-10 py-5 bg-white text-black rounded-2xl font-bold text-xl shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)] hover:-translate-y-1 transition-all flex items-center gap-3 group"
                      >
-                        <i className="fa-solid fa-robot text-indigo-600 text-2xl"></i>
+                        <i className="fa-solid fa-robot text-indigo-600 text-2xl neon-icon"></i>
                         Launch AI
                      </button>
                      <button 
                         onClick={() => onNavigate(ToolId.TOOL_EXPLORER)}
-                        className="px-10 py-5 bg-black/30 border border-white/20 text-white rounded-2xl font-bold text-xl hover:bg-black/50 hover:border-white/40 transition-all flex items-center gap-3 hover:-translate-y-1 backdrop-blur-md"
+                        className="px-10 py-5 bg-black/30 border border-white/20 text-white rounded-2xl font-bold text-xl hover:bg-black/50 hover:border-white/40 transition-all flex items-center gap-3 hover:-translate-y-1 backdrop-blur-md group"
                      >
-                        <i className="fa-solid fa-compass text-2xl"></i>
+                        <i className="fa-solid fa-compass text-2xl neon-icon"></i>
                         Explorer
                      </button>
                   </div>

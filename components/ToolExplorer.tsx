@@ -166,7 +166,7 @@ const ToolExplorer: React.FC<ToolExplorerProps> = ({ onNavigate }) => {
             onMouseMove={handleIconMouseMove}
             onMouseLeave={handleIconMouseLeave}
           >
-            <i className={`fa-solid ${tool.icon}`}></i>
+            <i className={`fa-solid ${tool.icon} transition-transform duration-500 group-hover:scale-125 group-hover:-rotate-12 neon-icon`}></i>
           </div>
           <div className="flex flex-col items-end gap-1">
              <span className="text-[10px] uppercase font-bold tracking-widest text-slate-500 bg-white/5 px-2 py-1 rounded-lg border border-white/5 group-hover:border-indigo-500/30 group-hover:text-indigo-300 transition-colors">
@@ -215,7 +215,7 @@ const ToolExplorer: React.FC<ToolExplorerProps> = ({ onNavigate }) => {
             className={`w-full text-left px-4 py-3 rounded-xl text-sm font-bold transition-all flex items-center justify-between group ${selectedCategory === 'All' ? 'bg-indigo-600 text-white shadow-lg' : 'text-slate-400 hover:bg-white/5 hover:text-white'}`}
          >
             <div className="flex items-center gap-3">
-              <i className={`fa-solid fa-layer-group w-5 text-center`}></i>
+              <i className={`fa-solid fa-layer-group w-5 text-center neon-icon`}></i>
               <span>All Tools</span>
             </div>
             <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${selectedCategory === 'All' ? 'bg-white/20 text-white' : 'bg-white/5 text-slate-500 group-hover:text-white'}`}>
@@ -230,7 +230,7 @@ const ToolExplorer: React.FC<ToolExplorerProps> = ({ onNavigate }) => {
                 className={`w-full text-left px-4 py-3 rounded-xl text-sm font-bold transition-all flex items-center justify-between group ${selectedCategory === cat ? 'bg-indigo-600 text-white shadow-lg' : 'text-slate-400 hover:bg-white/5 hover:text-white'}`}
             >
                 <div className="flex items-center gap-3">
-                    <i className={`fa-solid ${getCategoryIcon(cat)} w-5 text-center`}></i>
+                    <i className={`fa-solid ${getCategoryIcon(cat)} w-5 text-center neon-icon`}></i>
                     <span>{cat}</span>
                 </div>
                 <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${selectedCategory === cat ? 'bg-white/20 text-white' : 'bg-white/5 text-slate-500 group-hover:text-white'}`}>
@@ -324,7 +324,7 @@ const ToolExplorer: React.FC<ToolExplorerProps> = ({ onNavigate }) => {
             <div className="p-8 border-b border-white/5 flex justify-between items-start bg-white/5">
               <div className="flex gap-6">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white flex items-center justify-center text-3xl shadow-xl shadow-indigo-500/20 shrink-0">
-                  <i className={`fa-solid ${activeTool.icon}`}></i>
+                  <i className={`fa-solid ${activeTool.icon} neon-icon`}></i>
                 </div>
                 <div>
                   <h3 className="text-2xl font-heading font-bold text-white mb-1">{activeTool.title}</h3>

@@ -57,7 +57,7 @@ const MrFreeTools: React.FC = () => {
          
          <div className="relative z-10 max-w-2xl mx-auto">
             <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-4xl text-slate-900 shadow-xl mx-auto mb-6 transform -rotate-6 border-4 border-cyan-400">
-               <i className="fa-solid fa-screwdriver-wrench"></i>
+               <i className="fa-solid fa-screwdriver-wrench neon-icon"></i>
             </div>
             <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight">Mr. Freetools</h1>
             <p className="text-slate-300 text-lg font-medium leading-relaxed mb-8">
@@ -87,7 +87,7 @@ const MrFreeTools: React.FC = () => {
                className="group bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col relative overflow-hidden"
             >
                <div className="w-12 h-12 rounded-xl bg-cyan-600 text-white flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform shadow-md shadow-cyan-500/20">
-                  <i className={`fa-solid ${tool.icon}`}></i>
+                  <i className={`fa-solid ${tool.icon} neon-icon`}></i>
                </div>
                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-cyan-700 transition-colors">{tool.title}</h3>
                <p className="text-sm text-slate-500 leading-relaxed mb-4 flex-1 line-clamp-2">{tool.description}</p>
@@ -103,7 +103,7 @@ const MrFreeTools: React.FC = () => {
          
          {filteredTools.length === 0 && (
             <div className="col-span-full py-16 text-center text-slate-400">
-               <i className="fa-solid fa-toolbox text-4xl mb-3 opacity-30"></i>
+               <i className="fa-solid fa-toolbox text-4xl mb-3 opacity-30 neon-icon"></i>
                <p>No utilities found matching your search.</p>
             </div>
          )}
@@ -118,7 +118,7 @@ const MrFreeTools: React.FC = () => {
             <div className="p-6 bg-slate-50 border-b border-slate-100 flex justify-between items-center">
                <div className="flex items-center gap-4">
                  <div className="w-12 h-12 rounded-xl bg-cyan-600 text-white flex items-center justify-center text-xl shadow-lg">
-                    <i className={`fa-solid ${activeTool.icon}`}></i>
+                    <i className={`fa-solid ${activeTool.icon} neon-icon`}></i>
                  </div>
                  <div>
                     <h3 className="text-xl font-bold text-slate-900">{activeTool.title}</h3>
@@ -171,7 +171,7 @@ const MrFreeTools: React.FC = () => {
                  disabled={loading}
                  className={`px-8 py-3 rounded-xl font-bold text-white shadow-lg transition-all flex items-center justify-center gap-2 ${loading ? 'bg-slate-400 cursor-not-allowed' : 'bg-cyan-600 hover:bg-cyan-700 hover:-translate-y-0.5 shadow-cyan-500/30'}`}
                >
-                 {loading ? <i className="fa-solid fa-circle-notch fa-spin"></i> : <i className="fa-solid fa-bolt"></i>}
+                 {loading ? <i className="fa-solid fa-circle-notch fa-spin"></i> : <i className="fa-solid fa-bolt neon-icon"></i>}
                  {loading ? 'Processing...' : 'Run Utility'}
                </button>
             </div>

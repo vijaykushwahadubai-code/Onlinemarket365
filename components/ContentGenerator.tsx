@@ -110,7 +110,7 @@ const ContentGenerator: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 relative z-10">
           <h2 className="text-3xl font-heading font-bold text-white flex items-center gap-3">
             <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center shadow-lg border border-indigo-500/30">
-              <i className="fa-solid fa-pen-nib"></i>
+              <i className="fa-solid fa-pen-nib neon-icon"></i>
             </div>
             AI Copywriter
           </h2>
@@ -120,13 +120,13 @@ const ContentGenerator: React.FC = () => {
               onClick={() => setMode('generate')}
               className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${mode === 'generate' ? 'bg-indigo-600 text-white shadow-lg' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
             >
-              <i className="fa-solid fa-wand-magic-sparkles mr-2"></i> Generate Copy
+              <i className="fa-solid fa-wand-magic-sparkles mr-2 neon-icon"></i> Generate Copy
             </button>
             <button 
               onClick={() => setMode('improve')}
               className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${mode === 'improve' ? 'bg-indigo-600 text-white shadow-lg' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
             >
-              <i className="fa-solid fa-marker mr-2"></i> Improve Text
+              <i className="fa-solid fa-marker mr-2 neon-icon"></i> Improve Text
             </button>
           </div>
         </div>
@@ -176,8 +176,8 @@ const ContentGenerator: React.FC = () => {
               {/* Suggestions */}
               {!topic && (
                 <div className="pt-4 animate-fade-in">
-                   <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-3 pl-1 flex items-center gap-2">
-                     <i className="fa-solid fa-lightbulb text-amber-400"></i> Quick Start Ideas:
+                     <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-3 pl-1 flex items-center gap-2">
+                     <i className="fa-solid fa-lightbulb text-amber-400 neon-icon"></i> Quick Start Ideas:
                    </p>
                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {SUGGESTIONS.map((s, i) => (
@@ -243,11 +243,11 @@ const ContentGenerator: React.FC = () => {
           >
             {loading ? (
               <>
-                <i className="fa-solid fa-circle-notch fa-spin"></i> Processing...
+                <i className="fa-solid fa-circle-notch fa-spin neon-icon"></i> Processing...
               </>
             ) : (
               <>
-                <i className={`fa-solid ${mode === 'generate' ? 'fa-wand-magic-sparkles' : 'fa-marker'}`}></i> 
+                <i className={`fa-solid ${mode === 'generate' ? 'fa-wand-magic-sparkles' : 'fa-marker'} neon-icon`}></i> 
                 {mode === 'generate' ? 'Generate Content' : 'Improve Text'}
               </>
             )}

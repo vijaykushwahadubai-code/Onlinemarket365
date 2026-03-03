@@ -49,7 +49,7 @@ const VideoToolsHub: React.FC = () => {
       className="group bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
     >
       <div className={`w-14 h-14 rounded-xl ${tool.color} flex items-center justify-center text-white text-2xl shadow-lg mb-4 group-hover:scale-110 transition-transform`}>
-        <i className={`fa-solid ${tool.icon}`}></i>
+        <i className={`fa-solid ${tool.icon} transition-transform duration-500 group-hover:scale-125 group-hover:-rotate-12 neon-icon`}></i>
       </div>
       
       <div className="mb-4">
@@ -79,7 +79,7 @@ const VideoToolsHub: React.FC = () => {
          
          <div className="relative z-10 max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-bold text-indigo-300 uppercase tracking-widest mb-6">
-               <i className="fa-solid fa-photo-film"></i> Video Command Center
+               <i className="fa-solid fa-photo-film neon-icon"></i> Video Command Center
             </div>
             <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">
                Video Toolkit
@@ -95,7 +95,7 @@ const VideoToolsHub: React.FC = () => {
                      onClick={() => { setActiveTab(tab); setOutputCommand(''); setInputText(''); }}
                      className={`px-8 py-3 rounded-full font-bold transition-all flex items-center gap-2 ${activeTab === tab ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30' : 'bg-white/10 text-slate-300 hover:bg-white/20'}`}
                   >
-                     <i className={`fa-solid ${tab === 'Enhancer' ? 'fa-wand-magic-sparkles' : tab === 'Editing' ? 'fa-scissors' : tab === 'Conversion' ? 'fa-arrows-rotate' : 'fa-file-zipper'}`}></i>
+                     <i className={`fa-solid ${tab === 'Enhancer' ? 'fa-wand-magic-sparkles' : tab === 'Editing' ? 'fa-scissors' : tab === 'Conversion' ? 'fa-arrows-rotate' : 'fa-file-zipper'} neon-icon`}></i>
                      {tab}
                   </button>
                ))}
@@ -116,7 +116,7 @@ const VideoToolsHub: React.FC = () => {
             <section className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm flex flex-col md:flex-row gap-8 items-start">
                <div className="flex-1 w-full">
                   <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                     <i className="fa-solid fa-terminal text-indigo-600"></i> AI Command Generator
+                     <i className="fa-solid fa-terminal text-indigo-600 neon-icon"></i> AI Command Generator
                   </h2>
                   <p className="text-slate-500 text-sm mb-6">
                      Describe your {activeTab.toLowerCase()} needs, and our AI will generate the perfect FFmpeg command line or settings for you.
@@ -134,7 +134,7 @@ const VideoToolsHub: React.FC = () => {
                         disabled={loading || !inputText.trim()}
                         className={`w-full py-3 rounded-xl font-bold text-white shadow-lg transition-all flex items-center justify-center gap-2 ${loading ? 'bg-slate-400 cursor-not-allowed' : 'bg-slate-900 hover:bg-indigo-600 hover:-translate-y-0.5'}`}
                      >
-                        {loading ? <i className="fa-solid fa-circle-notch fa-spin"></i> : <i className="fa-solid fa-wand-magic-sparkles"></i>}
+                        {loading ? <i className="fa-solid fa-circle-notch fa-spin"></i> : <i className="fa-solid fa-wand-magic-sparkles neon-icon"></i>}
                         Generate Command
                      </button>
                   </div>

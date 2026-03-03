@@ -136,7 +136,7 @@ const QuickShareHub: React.FC = () => {
          
          <div className="relative z-10 max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-bold text-cyan-300 uppercase tracking-widest mb-6">
-               <i className="fa-solid fa-wifi"></i> Peer-to-Peer Transfer
+               <i className="fa-solid fa-wifi neon-icon"></i> Peer-to-Peer Transfer
             </div>
             <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">
                QuickShare Hub
@@ -150,13 +150,13 @@ const QuickShareHub: React.FC = () => {
                  onClick={() => { setActiveTab('send'); stopScan(); }}
                  className={`px-8 py-3 rounded-xl font-bold transition-all flex items-center gap-2 ${activeTab === 'send' ? 'bg-white text-indigo-900 shadow-lg' : 'text-indigo-200 hover:text-white'}`}
                >
-                  <i className="fa-solid fa-paper-plane"></i> Send
+                  <i className="fa-solid fa-paper-plane neon-icon"></i> Send
                </button>
                <button 
                  onClick={() => { setActiveTab('receive'); }}
                  className={`px-8 py-3 rounded-xl font-bold transition-all flex items-center gap-2 ${activeTab === 'receive' ? 'bg-white text-indigo-900 shadow-lg' : 'text-indigo-200 hover:text-white'}`}
                >
-                  <i className="fa-solid fa-download"></i> Receive
+                  <i className="fa-solid fa-download neon-icon"></i> Receive
                </button>
             </div>
          </div>
@@ -191,7 +191,7 @@ const QuickShareHub: React.FC = () => {
                           className="absolute inset-0 opacity-0 cursor-pointer"
                        />
                        <div className="w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center text-3xl text-indigo-500 mb-4 group-hover:scale-110 transition-transform">
-                          <i className="fa-solid fa-cloud-arrow-up"></i>
+                          <i className="fa-solid fa-cloud-arrow-up neon-icon"></i>
                        </div>
                        <h3 className="font-bold text-slate-700 text-lg">Drop files here</h3>
                        <p className="text-slate-400 text-sm mt-1">or click to browse</p>
@@ -226,7 +226,7 @@ const QuickShareHub: React.FC = () => {
                        disabled={!textInput}
                        className="w-full py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2"
                     >
-                       <i className="fa-solid fa-qrcode"></i> Generate QR Code
+                       <i className="fa-solid fa-qrcode neon-icon"></i> Generate QR Code
                     </button>
                  )}
               </div>
@@ -245,7 +245,7 @@ const QuickShareHub: React.FC = () => {
               ) : (
                  <div className="text-center text-slate-600 relative z-10">
                     <div className="w-24 h-24 rounded-full bg-slate-800 flex items-center justify-center text-4xl mb-6 mx-auto">
-                       <i className="fa-solid fa-tower-broadcast animate-pulse"></i>
+                       <i className="fa-solid fa-tower-broadcast animate-pulse neon-icon"></i>
                     </div>
                     <h3 className="text-slate-500 font-bold text-lg">Waiting for action...</h3>
                     <p className="text-slate-600 text-sm mt-2 max-w-xs mx-auto">Select files or text on the left to start sharing.</p>
@@ -267,7 +267,7 @@ const QuickShareHub: React.FC = () => {
                   {!isScanning && !scanResult && (
                      <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-400 bg-slate-50 z-10">
                         <div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center mb-4">
-                           <i className="fa-solid fa-camera text-3xl text-slate-300"></i>
+                           <i className="fa-solid fa-camera text-3xl text-slate-300 neon-icon"></i>
                         </div>
                         <p className="font-bold">Camera Offline</p>
                      </div>
@@ -296,7 +296,7 @@ const QuickShareHub: React.FC = () => {
                   <div className="bg-green-50 border border-green-200 rounded-2xl p-6 animate-scale-in text-left">
                      <div className="flex items-center gap-4 mb-4">
                         <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl shadow-sm">
-                           <i className="fa-solid fa-check"></i>
+                           <i className="fa-solid fa-check neon-icon"></i>
                         </div>
                         <div>
                            <h3 className="font-bold text-slate-800">Content Found!</h3>
@@ -330,7 +330,7 @@ const QuickShareHub: React.FC = () => {
                            className="py-3 px-4 bg-slate-100 text-slate-600 rounded-xl hover:bg-slate-200 transition-all"
                            title="Scan Again"
                         >
-                           <i className="fa-solid fa-rotate-right"></i>
+                           <i className="fa-solid fa-rotate-right neon-icon"></i>
                         </button>
                      </div>
                   </div>
@@ -341,14 +341,14 @@ const QuickShareHub: React.FC = () => {
                            onClick={startScan}
                            className="px-10 py-4 rounded-xl bg-slate-900 text-white font-bold hover:bg-indigo-600 transition-all shadow-lg flex items-center gap-3 text-lg"
                         >
-                           <i className="fa-solid fa-expand"></i> Start Scanner
+                           <i className="fa-solid fa-expand neon-icon"></i> Start Scanner
                         </button>
                      ) : (
                         <button 
                            onClick={stopScan}
                            className="px-10 py-4 rounded-xl bg-red-50 text-red-600 font-bold hover:bg-red-100 transition-all border border-red-200 flex items-center gap-3"
                         >
-                           <i className="fa-solid fa-stop"></i> Stop Camera
+                           <i className="fa-solid fa-stop neon-icon"></i> Stop Camera
                         </button>
                      )}
                   </div>

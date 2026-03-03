@@ -29,7 +29,7 @@ const ToolCard: React.FC<{ tool: AiTool; onClick: (tool: AiTool) => void }> = ({
       className="bg-white rounded-xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer group flex flex-col h-full"
     >
       <div className={`w-12 h-12 rounded-full ${colorClass} flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform`}>
-        <i className={`fa-solid ${tool.icon}`}></i>
+        <i className={`fa-solid ${tool.icon} neon-icon`}></i>
       </div>
       <div className="flex items-center gap-2 mb-2">
          <h3 className="font-bold text-slate-800 text-lg line-clamp-1">{tool.title}</h3>
@@ -144,7 +144,7 @@ const FreeToolsHub: React.FC = () => {
        {filteredTools.length > 0 ? (
          <div>
            <div className="flex items-center gap-3 mb-6 px-2">
-              <i className="fa-solid fa-bolt text-amber-500 text-xl"></i>
+              <i className="fa-solid fa-bolt text-amber-500 text-xl neon-icon"></i>
               <h2 className="text-2xl font-bold text-slate-900">
                 {selectedFilter === 'All' ? 'All Utilities' : `${selectedFilter} Tools`}
               </h2>
@@ -160,7 +160,7 @@ const FreeToolsHub: React.FC = () => {
          </div>
        ) : (
          <div className="text-center py-12 text-slate-400 bg-white rounded-3xl border border-dashed border-slate-200">
-           <i className="fa-solid fa-ghost text-4xl mb-4 opacity-50"></i>
+           <i className="fa-solid fa-ghost text-4xl mb-4 opacity-50 neon-icon"></i>
            <p>No tools found matching "{searchQuery}" in {selectedFilter}</p>
            <button onClick={() => {setSearchQuery(''); setSelectedFilter('All')}} className="mt-2 text-indigo-600 font-bold hover:underline">Clear Filters</button>
          </div>
@@ -174,7 +174,7 @@ const FreeToolsHub: React.FC = () => {
             <div className="p-6 bg-slate-50 border-b border-slate-100 flex justify-between items-center">
                <div className="flex items-center gap-3">
                  <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center">
-                    <i className={`fa-solid ${activeTool.icon}`}></i>
+                    <i className={`fa-solid ${activeTool.icon} neon-icon`}></i>
                  </div>
                  <h3 className="text-xl font-bold text-slate-900">{activeTool.title}</h3>
                </div>

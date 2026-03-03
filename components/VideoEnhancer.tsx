@@ -102,7 +102,7 @@ const VideoEnhancer: React.FC = () => {
       
       <div className="flex items-center gap-4 mb-8 relative z-10">
         <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center shadow-lg border border-indigo-500/30">
-          <i className="fa-solid fa-wand-magic-sparkles text-xl"></i>
+          <i className="fa-solid fa-wand-magic-sparkles text-xl neon-icon"></i>
         </div>
         <div>
           <h2 className="text-2xl font-heading font-bold text-white">AI Video Enhancer</h2>
@@ -154,7 +154,7 @@ const VideoEnhancer: React.FC = () => {
             ) : (
               <div className="space-y-3">
                 <div className="w-16 h-16 rounded-full bg-white/5 text-slate-400 flex items-center justify-center mx-auto text-2xl">
-                  <i className="fa-solid fa-cloud-arrow-up"></i>
+                  <i className="fa-solid fa-cloud-arrow-up neon-icon"></i>
                 </div>
                 <div>
                   <p className="text-white font-bold">Click or drag video to upload</p>
@@ -179,15 +179,15 @@ const VideoEnhancer: React.FC = () => {
           <button
             onClick={handleEnhance}
             disabled={!file || isAnalyzing || isProcessing}
-            className={`w-full py-4 rounded-xl font-bold text-white shadow-xl transition-all flex items-center justify-center gap-2
+            className={`w-full py-4 rounded-xl font-bold text-white shadow-xl transition-all flex items-center justify-center gap-2 group
               ${!file || isAnalyzing || isProcessing ? 'bg-indigo-500/50 cursor-not-allowed opacity-70' : 'bg-indigo-600 hover:bg-indigo-500 hover:-translate-y-1 shadow-indigo-500/25'}`}
           >
             {isAnalyzing ? (
-              <><i className="fa-solid fa-brain fa-pulse"></i> AI is analyzing...</>
+              <><i className="fa-solid fa-brain fa-pulse neon-icon"></i> AI is analyzing...</>
             ) : isProcessing ? (
-              <><i className="fa-solid fa-circle-notch fa-spin"></i> Processing Video...</>
+              <><i className="fa-solid fa-circle-notch fa-spin neon-icon"></i> Processing Video...</>
             ) : (
-              <><i className="fa-solid fa-wand-magic-sparkles"></i> Enhance Video</>
+              <><i className="fa-solid fa-wand-magic-sparkles transition-transform duration-500 group-hover:scale-125 group-hover:-rotate-12 neon-icon"></i> Enhance Video</>
             )}
           </button>
 
@@ -202,7 +202,7 @@ const VideoEnhancer: React.FC = () => {
         <div className="bg-slate-900/50 rounded-2xl border border-white/5 p-6 flex flex-col justify-center min-h-[400px] relative overflow-hidden">
           {!isAnalyzing && !isProcessing && !result && (
             <div className="text-center text-slate-500 space-y-4">
-              <i className="fa-solid fa-photo-film text-5xl opacity-20"></i>
+              <i className="fa-solid fa-photo-film text-5xl opacity-20 neon-icon"></i>
               <p className="text-sm font-medium">Upload a video and specify your goals to see the AI-enhanced results here.</p>
             </div>
           )}
@@ -211,7 +211,7 @@ const VideoEnhancer: React.FC = () => {
             <div className="space-y-8 w-full max-w-md mx-auto relative z-10">
               <div className="text-center space-y-2">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-500/20 text-indigo-400 mb-4">
-                  <i className={`fa-solid text-2xl ${isAnalyzing ? 'fa-brain fa-pulse' : 'fa-gear fa-spin'}`}></i>
+                  <i className={`fa-solid text-2xl ${isAnalyzing ? 'fa-brain fa-pulse' : 'fa-gear fa-spin'} neon-icon`}></i>
                 </div>
                 <h3 className="text-lg font-bold text-white">
                   {isAnalyzing ? 'Analyzing Request...' : 'Applying Enhancements...'}
@@ -242,7 +242,7 @@ const VideoEnhancer: React.FC = () => {
             <div className="space-y-6 animate-fade-in relative z-10">
               <div className="text-center space-y-2 mb-6">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 mb-2">
-                  <i className="fa-solid fa-check text-xl"></i>
+                  <i className="fa-solid fa-check text-xl neon-icon"></i>
                 </div>
                 <h3 className="text-xl font-bold text-white">Enhancement Complete</h3>
                 <p className="text-slate-400 text-sm">Your video has been successfully processed.</p>

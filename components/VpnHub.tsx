@@ -77,7 +77,7 @@ const VpnHub: React.FC = () => {
                onClick={toggleConnection}
                className={`w-40 h-40 rounded-full border-4 flex items-center justify-center transition-all duration-500 shadow-[0_0_50px_rgba(0,0,0,0.5)] group relative mx-auto ${status === 'Protected' ? 'border-green-500 bg-green-900/20 shadow-[0_0_30px_rgba(34,197,94,0.3)]' : 'border-slate-600 bg-slate-800 hover:border-slate-400'}`}
             >
-               <i className={`fa-solid fa-power-off text-6xl transition-colors ${status === 'Protected' ? 'text-green-500' : 'text-slate-400 group-hover:text-white'}`}></i>
+               <i className={`fa-solid fa-power-off text-6xl transition-colors ${status === 'Protected' ? 'text-green-500' : 'text-slate-400 group-hover:text-white'} neon-icon`}></i>
                {status === 'Connecting...' && (
                   <div className="absolute inset-0 rounded-full border-4 border-t-green-500 border-transparent animate-spin"></div>
                )}
@@ -128,7 +128,7 @@ const VpnHub: React.FC = () => {
             <div className="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100">
                <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center text-lg">
-                     <i className="fa-solid fa-file-code"></i>
+                     <i className="fa-solid fa-file-code neon-icon"></i>
                   </div>
                   <div>
                      <h2 className="text-xl font-bold text-slate-900">Config Generator</h2>
@@ -149,7 +149,7 @@ const VpnHub: React.FC = () => {
                         disabled={loadingConfig || !configPrompt.trim()}
                         className={`px-6 py-3 rounded-xl font-bold text-white shadow-lg transition-all flex items-center gap-2 ${loadingConfig ? 'bg-slate-400' : 'bg-slate-900 hover:bg-green-600'}`}
                      >
-                        {loadingConfig ? <i className="fa-solid fa-circle-notch fa-spin"></i> : <i className="fa-solid fa-wand-magic-sparkles"></i>}
+                        {loadingConfig ? <i className="fa-solid fa-circle-notch fa-spin neon-icon"></i> : <i className="fa-solid fa-wand-magic-sparkles neon-icon"></i>}
                         Generate Config
                      </button>
                   </div>
@@ -176,7 +176,7 @@ const VpnHub: React.FC = () => {
                   className="group bg-white p-4 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all flex items-center gap-4"
                >
                   <div className={`w-12 h-12 rounded-xl ${vpn.color} flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform`}>
-                     <i className={`fa-solid ${vpn.icon}`}></i>
+                     <i className={`fa-solid ${vpn.icon} neon-icon`}></i>
                   </div>
                   <div>
                      <h4 className="font-bold text-slate-900 group-hover:text-green-600 transition-colors">{vpn.name}</h4>

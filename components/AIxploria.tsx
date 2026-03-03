@@ -43,7 +43,7 @@ const AIxploria: React.FC = () => {
          
          <div className="relative z-10 max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-xs font-bold text-cyan-300 uppercase tracking-widest mb-6">
-               <i className="fa-solid fa-atom"></i> The AI Universe
+               <i className="fa-solid fa-atom neon-icon"></i> The AI Universe
             </div>
             <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400">
                AIxploria
@@ -94,7 +94,7 @@ const AIxploria: React.FC = () => {
 
                <div className="flex items-center gap-4 mb-4">
                   <div className={`w-14 h-14 rounded-2xl ${tool.color} flex items-center justify-center text-white text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                     <i className={`fa-solid ${tool.icon}`}></i>
+                     <i className={`fa-solid ${tool.icon} neon-icon`}></i>
                   </div>
                   <div>
                      <h3 className="font-bold text-lg text-slate-900 leading-tight">{tool.name}</h3>
@@ -128,7 +128,7 @@ const AIxploria: React.FC = () => {
 
       {filteredTools.length === 0 && (
          <div className="text-center py-20 bg-white/50 rounded-3xl border border-dashed border-slate-200">
-            <i className="fa-solid fa-meteor text-4xl text-slate-300 mb-4"></i>
+            <i className="fa-solid fa-meteor text-4xl text-slate-300 mb-4 neon-icon"></i>
             <p className="text-slate-500 font-medium">No tools found in this sector of the universe.</p>
             <button onClick={() => {setFilter('All'); setSearch('')}} className="mt-4 text-indigo-600 font-bold hover:underline">Reset Sensors</button>
          </div>

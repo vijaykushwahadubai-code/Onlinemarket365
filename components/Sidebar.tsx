@@ -65,8 +65,9 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTool, onNavigate, isOpen, setIs
             >
               <div 
                 className={`
-                  w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-300
-                  ${isActive ? 'text-white' : 'bg-transparent group-hover:bg-slate-800'}
+                  relative w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-500
+                  ${isActive ? 'text-white' : 'bg-transparent group-hover:bg-slate-800/80'}
+                  overflow-hidden
                 `}
                 style={isActive ? {
                   backgroundColor: accentColor,
@@ -74,7 +75,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTool, onNavigate, isOpen, setIs
                   boxShadow: `0 0 15px ${accentColor}66`
                 } : {}}
               >
-                <i className={`${item.icon} text-xs`}></i>
+                {/* Hover Glow Effect */}
+                {!isActive && (
+                  <div className="absolute inset-0 bg-indigo-500/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out rounded-lg"></div>
+                )}
+                <i className={`${item.icon} text-xs relative z-10 transition-all duration-500 ease-out group-hover:scale-[1.3] group-hover:-rotate-12 neon-icon`}></i>
               </div>
               
               <span className={`text-sm font-medium tracking-wide transition-all z-10 ${isActive ? 'text-white' : 'text-slate-400 group-hover:text-slate-200'}`}>
@@ -122,15 +127,16 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTool, onNavigate, isOpen, setIs
             onClick={() => onNavigate(ToolId.DASHBOARD)}
           >
             <div 
-              className="w-10 h-10 rounded-xl flex items-center justify-center text-white shadow-xl group-hover:scale-105 transition-transform duration-300 ring-1 ring-white/10"
+              className="w-10 h-10 rounded-xl flex items-center justify-center text-white shadow-xl transition-all duration-500 ring-1 ring-white/10 group-hover:shadow-indigo-500/50 group-hover:scale-110 overflow-hidden relative"
               style={{ backgroundColor: accentColor, boxShadow: `0 0 20px ${accentColor}40` }}
             >
-              <i className="fa-solid fa-cube text-lg"></i>
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+              <i className="fa-solid fa-cube text-lg relative z-10 transition-transform duration-500 group-hover:rotate-180 group-hover:scale-110 neon-icon"></i>
             </div>
             <div className="flex flex-col">
               <span className="font-heading font-bold text-xl text-white leading-none tracking-tight flex items-center">
                 Market<span style={{ color: accentColor }}>365</span>
-                <span style={{ color: accentColor }} className="text-sm ml-1 opacity-90"><i className="fa-solid fa-infinity"></i></span>
+                <span style={{ color: accentColor }} className="text-sm ml-1 opacity-90"><i className="fa-solid fa-infinity neon-icon"></i></span>
               </span>
               <span className="text-[9px] font-bold text-slate-500 mt-1.5 tracking-[0.2em] uppercase group-hover:text-white transition-colors">Pro Suite v3.0</span>
             </div>
@@ -177,15 +183,15 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTool, onNavigate, isOpen, setIs
           <div className="grid grid-cols-2 gap-2">
              <button 
                onClick={onOpenFeedback}
-               className="py-2.5 bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 border border-white/5 hover:border-white/10"
+               className="group py-2.5 bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 border border-white/5 hover:border-white/10 hover:shadow-lg hover:shadow-white/5"
              >
-               <i className="fa-regular fa-comment-dots"></i> Feedback
+               <i className="fa-regular fa-comment-dots transition-transform duration-500 group-hover:scale-125 group-hover:-rotate-12 neon-icon"></i> Feedback
              </button>
              <button 
                onClick={onOpenSettings}
-               className="py-2.5 bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 border border-white/5 hover:border-white/10"
+               className="group py-2.5 bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 border border-white/5 hover:border-white/10 hover:shadow-lg hover:shadow-white/5"
              >
-               <i className="fa-solid fa-gear"></i> Settings
+               <i className="fa-solid fa-gear transition-transform duration-500 group-hover:rotate-90 group-hover:scale-125 neon-icon"></i> Settings
              </button>
           </div>
           

@@ -213,6 +213,22 @@
       -webkit-text-fill-color: transparent;
     }
 
+    /* Neon Icon Glow Effect */
+    .neon-icon {
+      background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 40%, #f97316 80%, #fb923c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 16px rgba(249, 115, 22, 0.4));
+      display: inline-block;
+      transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .group:hover .neon-icon, .neon-icon:hover {
+      filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.9)) drop-shadow(0 0 24px rgba(249, 115, 22, 0.7)) brightness(1.2);
+    }
+
     /* --- TURBO MODE (High Performance) --- */
     body.turbo-mode .reveal-zoom {
       transition: none !important;
