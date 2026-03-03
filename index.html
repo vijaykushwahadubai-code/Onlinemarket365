@@ -1,89 +1,305 @@
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; img-src 'self' https: data: blob:; media-src 'self' https: data: blob:; connect-src 'self' https:;">
+  
+  <!-- PWA & Mobile Capabilities -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#020617">
+  <meta name="description" content="Professional AI Creative Suite for Business & Freelancers.">
+  <link rel="apple-touch-icon" href="https://via.placeholder.com/192.png?text=M365">
+  
+  <title>OnlineMarket365 | Pro Suite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Premium Fonts: Outfit (Headings) & Plus Jakarta Sans (Body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="manifest" href="/manifest.json">
+  <style>
+    :root {
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.9.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/12.9.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    body {
+      font-family: var(--font-body);
+      background-color: #020617; /* Slate 950 */
+      color: #f8fafc;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      overscroll-behavior-y: none;
+    }
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: var(--font-heading);
+    }
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    /* Cinematic Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+    /* Animations */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulseSlow { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.7; } }
+    @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    
+    .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+    .animate-fade-in-up { animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .animate-scale-in { animation: scaleIn 0.4s ease-out forwards; }
+    .animate-pulse-slow { animation: pulseSlow 4s infinite ease-in-out; }
+    
+    /* Universe Animations */
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    @keyframes twinkling {
+      0% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.1); }
+      100% { opacity: 0.3; transform: scale(1); }
+    }
+
+    .animate-spin-slow {
+      animation: spinSlow 120s linear infinite;
+    }
+
+    .stars-overlay {
+      background-image: 
+        radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 50px 160px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 90px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 130px 80px, #fff, rgba(0,0,0,0));
+      background-repeat: repeat;
+      background-size: 200px 200px;
+      animation: twinkling 5s infinite;
+    }
+
+    /* Scroll Zoom Reveal Animation - Bottom to Top Zoom */
+    .reveal-zoom {
+      opacity: 0;
+      transform: scale(0.9) translateY(60px); /* Starts smaller and lower */
+      transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                  transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      will-change: transform, opacity;
+    }
+    
+    .reveal-zoom.active {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    /* Glass Utilities & Effects */
+    .glass-panel {
+      background: rgba(30, 41, 59, 0.4);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    
+    .glass-panel:hover {
+      background: rgba(30, 41, 59, 0.6);
+      border-color: rgba(129, 140, 248, 0.5);
+      box-shadow: 0 10px 40px -10px rgba(129, 140, 248, 0.4), inset 0 0 20px rgba(129, 140, 248, 0.1);
+      transform: translateY(-5px);
+      z-index: 20;
+    }
+
+    /* Glass Refraction Effect */
+    .glass-panel::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+      transform: skewX(-20deg);
+      animation: glassShine 6s infinite;
+      pointer-events: none;
+    }
+    @keyframes glassShine {
+      0% { left: -150%; }
+      20% { left: 200%; }
+      100% { left: 200%; }
+    }
+
+    /* Continuous Floating Animation */
+    @keyframes floatZeroGravity {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float {
+      animation: floatZeroGravity 6s ease-in-out infinite;
+    }
+    /* Stagger floating animations */
+    .animate-float:nth-child(2n) { animation-delay: 1s; }
+    .animate-float:nth-child(3n) { animation-delay: 2s; }
+    .animate-float:nth-child(4n) { animation-delay: 3s; }
+
+    /* Zoom Overlay */
+    .zoom-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+    .zoom-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Zoomed Panel State */
+    .glass-panel.zoomed {
+      position: fixed !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) scale(1.5) !important;
+      z-index: 101 !important;
+      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1) !important;
+      animation: none !important;
+      box-shadow: 0 0 100px rgba(129, 140, 248, 0.5) !important;
+    }
+
+    /* Magnetic Icon */
+    .magnetic-icon {
+      transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+      display: inline-block;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Text Gradients */
+    .text-gradient {
+      background: linear-gradient(to right, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* --- TURBO MODE (High Performance) --- */
+    body.turbo-mode .reveal-zoom {
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    body.turbo-mode * {
+      backdrop-filter: none !important; /* Removes heavy glass effect */
+      box-shadow: none !important; /* Reduces GPU usage */
+      text-shadow: none !important;
+    }
+    body.turbo-mode .animate-spin-slow,
+    body.turbo-mode .animate-pulse-slow,
+    body.turbo-mode .stars-overlay {
+      animation: none !important;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "jsqr": "https://esm.sh/jsqr@1.4.0",
+    "recharts": "https://esm.sh/recharts@2.12.2"
+  }
+}
+</script>
+<script>
+  // Service Worker Registration
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/serviceWorker.js')
+        .then(req => console.log('SW Registered'))
+        .catch(err => console.log('SW Failed', err));
+    });
+  }
+
+  // Scroll Reveal Observer (Bidirectional)
+  document.addEventListener('DOMContentLoaded', () => {
+    // Check for Turbo Mode preference, default to true for smoother performance
+    const savedTurbo = localStorage.getItem('market365_turbo');
+    const isTurbo = savedTurbo === null ? true : savedTurbo === 'true';
+    if(isTurbo) document.body.classList.add('turbo-mode');
+
+    const observerOptions = {
+      root: null, // viewport
+      rootMargin: '0px',
+      threshold: 0.1 // Trigger when 10% visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          // Removes active class when out of view to allow re-animating on scroll up/down
+          // This creates the "niche se upar ko zoom" effect repeatedly
+          entry.target.classList.remove('active');
         }
       });
-    </script>
-  </body>
+    }, observerOptions);
+
+    // Observe function to be called periodically or on mutation
+    const observeNewElements = () => {
+      if (document.body.classList.contains('turbo-mode')) {
+         document.querySelectorAll('.reveal-zoom').forEach(el => el.classList.add('active'));
+         return;
+      }
+      document.querySelectorAll('.reveal-zoom').forEach(el => {
+        observer.observe(el);
+      });
+    };
+
+    // Initial Observe
+    observeNewElements();
+
+    // Re-observe on DOM changes (important for React single page app)
+    const mutationObserver = new MutationObserver(observeNewElements);
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+  });
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>
